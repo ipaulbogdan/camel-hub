@@ -1,0 +1,8 @@
+rest-producer:
+  base-uri: http://localhost:9091
+  hello-world-path: /hello
+
+soap-producer:
+  base-uri: http://idorasi.com
+  hello-world-path: /hello
+
