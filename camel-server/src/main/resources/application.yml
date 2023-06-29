@@ -3,6 +3,5 @@ rest-producer:
   hello-world-path: /hello
 
 soap-producer:
-  base-uri: http://idorasi.com
-  hello-world-path: /hello
+  base-uri: http://localhost:9092/ws
 

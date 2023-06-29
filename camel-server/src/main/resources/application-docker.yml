@@ -1,0 +1,7 @@
+rest-producer:
+  base-uri: http://rest-producer:9091
+  hello-world-path: /hello
+
+soap-producer:
+  base-uri: http://soap-producer:9092/ws
+

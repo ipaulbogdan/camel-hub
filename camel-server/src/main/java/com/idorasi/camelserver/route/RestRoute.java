@@ -17,7 +17,7 @@ public class RestRoute extends RouteBuilder {
 
     @Override
     public void configure() {
-        restConfiguration().host("localhost")
+        restConfiguration()
                 .port(9090)
                 .apiComponent("http-netty")
                 .bindingMode(RestBindingMode.json);

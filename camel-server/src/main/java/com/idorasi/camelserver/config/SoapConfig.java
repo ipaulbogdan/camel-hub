@@ -14,7 +14,6 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 public class SoapConfig {
 
     private String baseUri;
-    private String helloWorldPath;
 
     @Bean
     public Jaxb2Marshaller marshaller()  {
@@ -25,7 +24,7 @@ public class SoapConfig {
     @Bean
     public SoapClient soapConnector(Jaxb2Marshaller marshaller) {
         SoapClient client = new SoapClient();
-        client.setDefaultUri("http://localhost:9092/ws");
+        client.setDefaultUri(baseUri);
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;
