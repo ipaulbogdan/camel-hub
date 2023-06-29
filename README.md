@@ -1,6 +1,6 @@
 # Camel server hub
 
-## Instalation
+## Installation
 
 Run command: 
 ```bash
@@ -27,6 +27,12 @@ The routing can be checked in logs. Camel logs:
 Soap producer logs: 
 ```
 2023-06-29T07:44:33.315Z Received request with param: World
+```
+
+
+## Stop services:
+```bash
+sh stop.sh
 ```
 
 
