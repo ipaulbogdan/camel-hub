@@ -35,5 +35,26 @@ Soap producer logs:
 sh stop.sh
 ```
 
+## Redirect test:
+```bash
+curl -XGET localhost:9090/rest/hello-world
+```
+```
+{
+    "message": "First hello!",
+    "redirectUrl": "http://localhost:9090/rest/hello-world?redirectUrl=http://rest-producer:9091/redirect/hello"
+}
+```
+```bash
+curl "http://localhost:9090/rest/hello-world?redirectUrl=http://rest-producer:9091/redirect/hello"
+```
+
+```
+{
+    "message": "Second hello",
+    "redirectUrl": null
+}
+```
+
 
 

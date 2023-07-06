@@ -6,9 +6,8 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class SoapHelloWorldBody {
+public class RestHelloWorld {
 
-    private String name;
+    private String message;
     private String redirectUrl;
-
 }

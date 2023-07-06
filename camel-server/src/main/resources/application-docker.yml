@@ -2,6 +2,16 @@ rest-producer:
   base-uri: http://rest-producer:9091
   hello-world-path: /hello
 
+
 soap-producer:
-  base-uri: http://soap-producer:9092/ws
+  base-uri: http://soap-producer:9092
+  hello-world-path: /ws
+
+
+camel:
+  netty:
+    url: http://localhost
+    port: 9090
+    rest-hello-path: "rest/hello-world"
+    soap-hello-path: "soap/hello-world"
 

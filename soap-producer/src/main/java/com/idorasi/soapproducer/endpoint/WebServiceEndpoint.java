@@ -2,7 +2,9 @@ package com.idorasi.soapproducer.endpoint;
 
 import com.idorasi.hello.HelloWorldRequest;
 import com.idorasi.hello.HelloWorldResponse;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -20,7 +22,8 @@ public class WebServiceEndpoint {
         log.info("Received request with param: " + helloWorldRequest.getName());
 
         var response = new HelloWorldResponse();
-        response.setResponse("Hello " + helloWorldRequest.getName());
+        response.setMessage("Hello " + helloWorldRequest.getName());
+        response.setRedirectUrl("http://localhost:9092/ws");
 
         return response;
     }
