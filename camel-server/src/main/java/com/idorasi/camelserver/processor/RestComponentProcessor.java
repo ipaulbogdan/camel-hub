@@ -1,7 +1,7 @@
 package com.idorasi.camelserver.processor;
 
 import java.util.Optional;
-import com.idorasi.camelserver.config.RestTemplateConfig;
+import com.idorasi.camelserver.config.RestProducerTemplateConfig;
 import com.idorasi.camelserver.dto.ApiTech;
 import com.idorasi.camelserver.dto.RestHelloWorld;
 import com.idorasi.camelserver.util.UrlFormatter;
@@ -16,13 +16,13 @@ import org.springframework.web.client.RestTemplate;
 public class RestComponentProcessor implements Processor {
 
     private UrlFormatter urlFormatter;
-    private RestTemplateConfig restTemplateConfig;
+    private RestProducerTemplateConfig restProducerTemplateConfig;
     private RestTemplate restTemplate;
 
     @Override
     public void process(Exchange exchange) {
         var redirectUrl = exchange.getIn().getHeader("redirectUrl", String.class);
-        var url = redirectUrl != null ? redirectUrl : restTemplateConfig.getHelloWorldPath();
+        var url = redirectUrl != null ? redirectUrl : restProducerTemplateConfig.getHelloWorldPath();
 
         var response = Optional.ofNullable(restTemplate.getForObject(url, RestHelloWorld.class));
         var mappedResponse = response.map(this::formatUrl)
@@ -35,7 +35,7 @@ public class RestComponentProcessor implements Processor {
     private RestHelloWorld formatUrl(RestHelloWorld restHelloWorld) {
         if (restHelloWorld.getRedirectUrl() != null) {
             return restHelloWorld.setRedirectUrl(urlFormatter.formatUrl(restHelloWorld.getRedirectUrl(),
-                    restTemplateConfig.getBaseUri(), ApiTech.REST));
+                    restProducerTemplateConfig.getBaseUri(), ApiTech.REST));
         }
 
         return restHelloWorld;
