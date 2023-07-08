@@ -8,6 +8,10 @@ soap-producer:
   hello-world-path: /ws
 
 
+html-producer:
+  base-uri: http://html-producer:9093
+
+
 camel:
   netty:
     url: http://localhost

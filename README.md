@@ -57,4 +57,10 @@ curl "http://localhost:9090/rest/hello-world?redirectUrl=http://rest-producer:90
 ```
 
 
+## HTML test:
+1. Go to localhost:9090/login
+2. Enter username and submit form
+3. You will get redirected to localhost:9090/hello?username={username}
+
+
 
