@@ -62,5 +62,6 @@ curl "http://localhost:9090/rest/hello-world?redirectUrl=http://rest-producer:90
 2. Enter username and submit form
 3. You will get redirected to localhost:9090/hello?username={username}
 
+There is a open ticket on the camel side for regex endpoints: https://issues.apache.org/jira/browse/CAMEL-8306
 
 
